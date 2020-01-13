@@ -13,6 +13,7 @@ class Details extends React.Component {
     replaceHtml = (str) => {
         str = str.replace(/<[^>]*>?/gm, '');
         str = str.replace("nbsp", "");
+        str = str.replace(/&ndash;/g, '')
         return str
     }
 
@@ -24,7 +25,7 @@ class Details extends React.Component {
         return (
             <div>
                    <div className="row">
-                       <div className="col-sm-8" style={{ background:'#C8FFF2', padding:'40px',color:'#000' }}>
+                       <div className="col-sm-8" style={{ background:'#C8FFF2', padding:'40px',color:'#000', margin:'1cm' }}>
                            <div>
                                 <span style={{ float:'left', fontSize:'30px' }}>&#8592;</span>
                                 <span style={{ float:'right' }}>Вернуться к списку</span>

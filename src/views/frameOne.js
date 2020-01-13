@@ -5712,7 +5712,7 @@ class FrameOne extends React.Component {
                         </div>                          
                    
                     </div>
-                    <div className="col-sm-8" style={{ color:'#D39F9F' }}>
+                    <div className="col-sm-8" style={{ color:'#D39F9F', margin:'auto' }}>
                         {
                             this.state.show_title ?
                             (

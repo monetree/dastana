@@ -8,8 +8,11 @@ class List extends React.Component {
         }
     }
 
-    removeNbsp = (str) => {
-        console.log(str.replace("nbsp", ""))
+
+
+    replaceHtml = (str) => {
+        str = str.replace(/<[^>]*>?/gm, '');
+        str = str.replace("nbsp", "");
         return str
     }
 
@@ -31,7 +34,7 @@ class List extends React.Component {
                                                 <input onClick={() => this.props.handleDetails(data)} type="checkbox" class="form-check-input" value="" /><span style={{ color:'#000', fontSize:'25px' }}>{data.name}</span>
                                             </label>
                                             <p>
-                                                {data.description.replace(/<[^>]*>?/gm, '')}
+                                                {this.replaceHtml(data.description)}
                                             </p>
                                         </div>
                                     </div>

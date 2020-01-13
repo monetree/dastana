@@ -8,7 +8,19 @@ class Details extends React.Component {
         }
     }
 
+
+
+    replaceHtml = (str) => {
+        str = str.replace(/<[^>]*>?/gm, '');
+        str = str.replace("nbsp", "");
+        return str
+    }
+
     render(){
+    let image = this.props.image
+    if(image){
+        image = image.split("/")[2];
+    }
         return (
             <div>
                    <div className="row">
@@ -31,7 +43,7 @@ class Details extends React.Component {
                            <h3>{this.props.name}</h3>
                            <div style={{ width:'70%' }}>
                             <p>
-                                {this.props.description}
+                                {this.replaceHtml(this.props.description)}
                             </p>
  
 
@@ -39,7 +51,7 @@ class Details extends React.Component {
                         </div>
                         <div className="col-sm-4" style={{background: '#C8FFF2'}}>
                             <div>
-                                    <img style={{ width:'200px', margin:'auto', marginTop:'50%', marginBottom:'50%' }} src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" />
+                                    <img style={{ width:'200px', margin:'auto', marginTop:'50%', marginBottom:'50%' }} src={`image/${image}`} />
                             </div>
       
 

@@ -5621,18 +5621,31 @@ class FrameOne extends React.Component {
 
 
     handlSecondDropDown = (selected_dropdown) => {
-        alert(selected_dropdown)
+        let res = []
+        let lists = this.state.lists;
+        for (let list of lists){
+            if(selected_dropdown === list.buildings){
+                res.push(list)
+            }
+        }
+        this.setState({
+            show_title:false,
+            show_list:true,
+            right_side_list:res
+        })
     }
 
     
 
     handleDetails = (details) => {
+      console.log(details, "---")
         this.setState({
             show_list:false,
             show_title:false,
             show_details:true,
             name: details.name,
-            description: details.description
+            description: details.description,
+            image:details.image
         })
     }
 
@@ -5655,7 +5668,7 @@ class FrameOne extends React.Component {
                             </div>  
                             <div class="form-group">
                                 <label for="sel1">Помещения</label>
-                                <select class="form-control" onChange={(e) => this.handlDropDown(e.target.value)} id="sel1" name="sellist1">
+                                <select class="form-control" onChange={(e) => this.handlSecondDropDown(e.target.value)} id="sel1" name="sellist1">
                                 {
                                         this.state.second_shows.map(dropdown => (
                                             <option style={{ background:'#508FD9' }} value={dropdown.id}>{dropdown.name}</option>
@@ -5718,7 +5731,7 @@ class FrameOne extends React.Component {
                         {
                             this.state.show_details ?
                             (
-                                <Details name={this.state.name} description={this.state.description} />
+                                <Details name={this.state.name} description={this.state.description} image={this.state.image} />
                             ):(
                                 ''
                             )

@@ -12,7 +12,7 @@ class List extends React.Component {
 
     replaceHtml = (str) => {
         str = str.replace(/<[^>]*>?/gm, '');
-        str = str.replace("nbsp", "");
+        str = str.replace(/&nbsp;/g, '')
         return str
     }
 
@@ -28,7 +28,8 @@ class List extends React.Component {
                             <div>
                                            {
                                 datas.map(data => (
-                                    <div style={{ margin:'auto', color:'#000', marginTop:'2cm' }}>
+                                    <div style={{ color:'#000', marginTop:'2cm' }}>
+                                        <img style={{ width:'200px'}} src={`image/${data.image.split("/")[2]}`} />
                                         <div class="form-check">
                                             <label class="form-check-label">
                                                 <input onClick={() => this.props.handleDetails(data)} type="checkbox" class="form-check-input" value="" /><span style={{ color:'#000', fontSize:'25px' }}>{data.name}</span>

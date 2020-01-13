@@ -5638,7 +5638,6 @@ class FrameOne extends React.Component {
     
 
     handleDetails = (details) => {
-      console.log(details, "---")
         this.setState({
             show_list:false,
             show_title:false,

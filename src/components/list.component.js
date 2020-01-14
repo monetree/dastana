@@ -20,7 +20,7 @@ class List extends React.Component {
     render(){
         let datas = this.props.right_side_list
         return (
-            <div>
+            <div style={{ height:'650px', overflowY:'auto' }}>
                 {
                     datas.length ? 
                     (
@@ -38,12 +38,13 @@ class List extends React.Component {
                                            {
                                 datas.map(data => (
                                     <div style={{ color:'#000', marginTop:'2cm', border:'2px solid #508FD9', width:'40%' }} onClick={() => this.props.handleDetails(data)}>
-                                        <center><img style={{ width:'200px'}} src={`image/${data.image.split("/")[2]}`} /></center>
+                                        <center><img style={{ width:'200px', marginTop:'1cm', marginBottom:'1cm'}} src={`image/${data.image.split("/")[2]}`} /></center>
+                                        
                                         <div class="form-check">
                                             <label class="form-check-label">
                                             <span style={{ color:'#000', fontSize:'25px' }}>{data.name}</span>
                                             </label>
-                                            <p>
+                                            <p style={{ marginRight:'1cm' }}>
                                                 {this.replaceHtml(data.description)}
                                             </p>
                                         </div>
@@ -52,7 +53,8 @@ class List extends React.Component {
                             }
                             </div>
                         ):(
-                            <h1 style={{ marginTop:'-8cm' }}>No results found !</h1>
+                            <h3 style={{ marginTop:'2cm',textAlign:'center' }}>Нет результатов
+                            </h3>
                         )
                     }
                 </div>

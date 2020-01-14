@@ -2,6 +2,7 @@ import React from 'react';
 import Title from '../components/title.component';
 import List from '../components/list.component';
 import Details from '../components/details.component';
+import { Link } from "react-router-dom";
 
 
 class FrameOne extends React.Component {
@@ -5709,8 +5710,12 @@ class FrameOne extends React.Component {
                                     }
                             </select>
                         </div> 
-                        </div>                          
-                   
+                        </div>       
+
+                            <Link to="/"><div style={{ background:'#567EBB',textAlign:'center',padding:'10px', width:'100%', bottom:"0px", color:'#fff', marginBottom:'1cm', width:'100%' }}>
+                                Вернуться в главное меню
+                            </div>       </Link>            
+                                      
                     </div>
                     <div className="col-sm-8" style={{ color:'#D39F9F', margin:'auto' }}>
                         {

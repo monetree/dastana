@@ -37,7 +37,7 @@ class List extends React.Component {
                             <div>
                                            {
                                 datas.map(data => (
-                                    <div style={{ color:'#000', marginTop:'2cm', border:'2px solid #508FD9', width:'40%' }} onClick={() => this.props.handleDetails(data)}>
+                                    <div style={{ color:'#000', marginTop:'2cm', border:'2px solid #508FD9', width:'40%' }}>
                                         <center><img style={{ width:'200px', marginTop:'1cm', marginBottom:'1cm'}} src={`image/${data.image.split("/")[2]}`} /></center>
                                         
                                         <div class="form-check">

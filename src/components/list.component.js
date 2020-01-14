@@ -53,7 +53,7 @@ class List extends React.Component {
                             }
                             </div>
                         ):(
-                            <h3 style={{ marginTop:'2cm',textAlign:'center' }}>Нет результатов
+                            <h3 style={{ marginTop:'7cm',textAlign:'center' }}>Нет результатов
                             </h3>
                         )
                     }
